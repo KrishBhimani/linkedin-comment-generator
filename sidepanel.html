@@ -12,10 +12,37 @@
       <span class="app-title">Comment Generator</span>
       <button id="settings-btn" class="icon-btn" title="Settings">⚙️</button>
     </header>
+
+    <div id="status-bar" class="status-bar hidden">
+      <span id="status-info"></span>
+    </div>
+
     <div id="content">
-      <p class="empty-state">Select text on LinkedIn, right-click, and choose "Generate Comments"</p>
+      <!-- Empty state -->
+      <div id="empty-state" class="empty-state">
+        <p>Select text on LinkedIn, right-click, and choose "Generate Comments"</p>
+      </div>
+
+      <!-- Loading state -->
+      <div id="loading-state" class="loading-state hidden">
+        <div class="spinner"></div>
+        <p>Generating comments...</p>
+      </div>
+
+      <!-- Error state -->
+      <div id="error-state" class="error-state hidden">
+        <p id="error-message"></p>
+        <button id="error-settings-btn" class="link-btn hidden">Open Settings</button>
+      </div>
+
+      <!-- Comments -->
+      <div id="comments-container" class="hidden"></div>
+    </div>
+
+    <div id="regenerate-container" class="hidden">
+      <button id="regenerate-btn" class="regenerate-btn">🔄 Regenerate</button>
     </div>
   </div>
-  <script src="sidepanel.js"></script>
+  <script src="sidepanel.js" type="module"></script>
 </body>
 </html>
