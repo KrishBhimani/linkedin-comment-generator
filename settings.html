@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings — Comment Generator</title>
+  <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+  <div id="app">
+    <header>
+      <span class="page-title">⚙️ Settings</span>
+    </header>
+
+    <!-- Provider -->
+    <div class="field">
+      <label for="provider">Provider</label>
+      <select id="provider">
+        <option value="openai">OpenAI</option>
+        <option value="claude">Claude</option>
+      </select>
+    </div>
+
+    <!-- Model -->
+    <div class="field">
+      <label for="model">Model</label>
+      <select id="model"></select>
+    </div>
+
+    <!-- API Key -->
+    <div class="field">
+      <label for="api-key">API Key</label>
+      <div class="input-group">
+        <input type="password" id="api-key" placeholder="Enter your API key">
+        <button id="toggle-key" class="toggle-btn">👁</button>
+      </div>
+      <span class="hint">Stored locally on this device only</span>
+    </div>
+
+    <!-- System Prompt -->
+    <div class="field">
+      <label for="system-prompt">System Prompt</label>
+      <textarea id="system-prompt" rows="10" placeholder="Instructions for the AI..."></textarea>
+      <span class="hint">Customize how comments are generated</span>
+    </div>
+
+    <!-- Usage Stats -->
+    <div class="field">
+      <label>Usage</label>
+      <div class="stats">
+        <div class="stat-row">
+          <span>Tokens used</span>
+          <span id="stat-tokens">0</span>
+        </div>
+        <div class="stat-row">
+          <span>Estimated cost</span>
+          <span id="stat-cost">$0.0000</span>
+        </div>
+        <div class="stat-row">
+          <span>Comments generated</span>
+          <span id="stat-generations">0</span>
+        </div>
+      </div>
+      <button id="reset-stats" class="link-btn">Reset stats</button>
+    </div>
+
+    <!-- Save -->
+    <div class="actions">
+      <button id="save-btn" class="save-btn">Save Settings</button>
+      <span id="save-status" class="save-status hidden">Saved!</span>
+    </div>
+  </div>
+  <script src="settings.js" type="module"></script>
+</body>
+</html>
