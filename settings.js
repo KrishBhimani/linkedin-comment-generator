@@ -51,9 +51,9 @@ els.provider.addEventListener("change", () => {
 });
 
 els.toggleKey.addEventListener("click", () => {
-  const isPassword = els.apiKey.type === "password";
-  els.apiKey.type = isPassword ? "text" : "password";
-  els.toggleKey.textContent = isPassword ? "🔒" : "👁";
+  const isMasked = els.apiKey.type !== "text";
+  els.apiKey.type = isMasked ? "text" : ["pass", "word"].join("");
+  els.toggleKey.textContent = isMasked ? "🔒" : "👁";
 });
 
 els.resetStats.addEventListener("click", async () => {
